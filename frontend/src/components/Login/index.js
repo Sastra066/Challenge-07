@@ -24,13 +24,17 @@ async function doLogin({ email, password }) {
 }
 
 async function doLoginWithGoogle(token) {
+  // Sesuaikan endpoint
   const response = await fetch("http://localhost:8000/v1/auth/google", {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ token }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      token,
+    }),
   });
   const data = await response.json();
-  console.log(data);
   return data.token;
 }
 

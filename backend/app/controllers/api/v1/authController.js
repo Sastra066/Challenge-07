@@ -2,9 +2,10 @@
  * @file contains authentication request handler and its business logic
  * @author Fikri Rahmat Nurhidayat
  */
-
-const bcrypt = require("bcryptjs");
 const axios = require("axios");
+const { OAuth2Client } = require("google-auth-library");
+const client = new OAuth2Client(process.env.REACT_APP_GOOGLE_CLIENT_ID);
+const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const UserServices = require("../../../services/userServices");
 const { JWT_SECRET_KEY = "Rahasia" } = process.env;
@@ -210,17 +211,19 @@ module.exports = {
   },
 
   async handleGoogleLoginOrRegister(req, res) {
-    const { accessToken } = req.body;
-    const options = { headers: { Authorization: `Bearer ${accessToken}` } };
+    const { token } = req.body;
 
     try {
-      const response = await axios.get(
-        "https://www.googleapis.com/oauth2/v2/userinfo",
-        options
-      );
-      const { id, email, name } = response.data;
+      const ticket = await client.verifyIdToken({
+        idToken: token,
+        audience: process.env.REACT_APP_GOOGLE_CLIENT_ID,
+      });
 
-      let user = await User.findOne({ where: { googleId: id } });
+      const { email, name } = ticket.getPayload();
+
+      console.log(ticket.getPayload());
+
+      let user = await User.findOne({ where: { email: email } });
       if (!user) user = await User.create({ email, name });
 
       const accessToken = createToken(user);
