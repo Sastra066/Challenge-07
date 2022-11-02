@@ -45,7 +45,7 @@ const Nav = () => {
         {isLoggedIn ? (
             <nav className="navbar fixed-top navbar-expand-lg navbar-light">
                 <div className="container">
-                    <img src="./image/logo.png" alt=""/>
+                    <img src="./images/logo.png" alt=""/>
                     {/* <!-- <a className="navbar-brand" href="#"></a> --> */}
                     <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
