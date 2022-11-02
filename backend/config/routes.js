@@ -47,7 +47,7 @@ apiRouter.post(
   controllers.api.v1.authController.createAdmin
 );
 
-apiRouter.post("/v1/auth/google", controllers.api.v1.authController.handleGoogleLoginOrRegister);
+apiRouter.post("/api/v1/google", controllers.api.v1.authController.handleGoogleLoginOrRegister);
 
 apiRouter.use(controllers.api.main.onLost);
 apiRouter.use(controllers.api.main.onError);
