@@ -24,8 +24,8 @@ function LandingPage() {
             <button className="button-28" role="button">Mulai Sewa Mobil</button>
           </div>
           <div className="col-lg-6 car">
-            <img className="bg" src="./image/bg.png" alt=""/>
-            <img className="img-car" src="./image/Mercedes Car EQC 300kW Edition - 900x598 1.png" alt=""/>
+            <img className="bg" src="./images/bg.png" alt=""/>
+            <img className="img-car" src="./images/Mercedes Car EQC 300kW Edition - 900x598 1.png" alt=""/>
           </div>
         </div>
       </section>
@@ -33,17 +33,17 @@ function LandingPage() {
       <section className="Our-Service container" id="Our-Services"><br/><br/><br/>
         <div className="row justify-content-md-center">
           <div className="col-lg-5 Services">
-            <img src="./image/img_service.png" alt=""/>
+            <img src="./images/img_service.png" alt=""/>
           </div>
           <div className="col-lg-1"></div>
           <div className="col-lg-5 deskripsi">
             <h3>Best Car Rental for any kind of trip in (Lokasimu)!</h3>
             <p>Sewa mobil di (Lokasimu) bersama Binar Car Rental jaminan harga lebih murah dibandingkan yang lain, kondisi mobil baru, serta kualitas pelayanan terbaik untuk perjalanan wisata, bisnis, wedding, meeting, dll.</p>
-            <p><img src="./image/Group 53.png" alt=""/>&nbsp Sewa Mobil Dengan Supir di Bali 12 Jam</p>
-            <p><img src="./image/Group 53.png" alt=""/>&nbsp Sewa Mobil Lepas Kunci di Bali 24 Jam</p>
-            <p><img src="./image/Group 53.png" alt=""/>&nbsp Sewa Mobil Jangka Panjang Bulanan</p>
-            <p><img src="./image/Group 53.png" alt=""/>&nbsp Gratis Antar - Jemput Mobil di Bandara</p>
-            <p><img src="./image/Group 53.png" alt=""/>&nbsp Layanan Airport Transfer / Drop In Out</p>
+            <p><img src="./images/Group 53.png" alt=""/>&nbsp Sewa Mobil Dengan Supir di Bali 12 Jam</p>
+            <p><img src="./images/Group 53.png" alt=""/>&nbsp Sewa Mobil Lepas Kunci di Bali 24 Jam</p>
+            <p><img src="./images/Group 53.png" alt=""/>&nbsp Sewa Mobil Jangka Panjang Bulanan</p>
+            <p><img src="./images/Group 53.png" alt=""/>&nbsp Gratis Antar - Jemput Mobil di Bandara</p>
+            <p><img src="./images/Group 53.png" alt=""/>&nbsp Layanan Airport Transfer / Drop In Out</p>
           </div>
         </div>
       </section>
@@ -55,7 +55,7 @@ function LandingPage() {
           <div className="col-lg-3 col-md-6 col-sm-12">
             <div className="card">
               <div className="card-body">
-                <img src="./image/icon_complete.png" alt="..."/>
+                <img src="./images/icon_complete.png" alt="..."/>
                 <h5 className="card-title">Mobil Lengkap</h5>
                 <p className="card-text">Tersedia banyak pilihan mobil, kondisi masih baru, bersih dan terawat</p>
               </div>
@@ -64,7 +64,7 @@ function LandingPage() {
           <div className="col-lg-3 col-md-6 col-sm-12">
             <div className="card">
               <div className="card-body">
-                <img src="./image/icon_price.png" alt="..."/>
+                <img src="./images/icon_price.png" alt="..."/>
                 <h5 className="card-title">Harga Murah</h5>
                 <p className="card-text">Harga murah dan bersaing, bisa bandingkan harga kami dengan rental mobil lain</p>
               </div>
@@ -73,7 +73,7 @@ function LandingPage() {
           <div className="col-lg-3 col-md-6 col-sm-12">
             <div className="card">
               <div className="card-body">
-                <img src="./image/icon_24hrs.png" alt="..."/>
+                <img src="./images/icon_24hrs.png" alt="..."/>
                 <h5 className="card-title">Layanan 24 Jam</h5>
                 <p className="card-text">Siap melayani kebutuhan Anda selama 24 jam nonstop. Kami juga tersedia di akhir minggu</p>
               </div>
@@ -82,7 +82,7 @@ function LandingPage() {
           <div className="col-lg-3 col-md-6 col-sm-12">
             <div className="card">
               <div className="card-body">
-                <img src="./image/icon_professional.png" alt="..."/>
+                <img src="./images/icon_professional.png" alt="..."/>
                 <h5 className="card-title">Sopir Profesional</h5>
                 <p className="card-text">Sopir yang profesional, berpengalaman, jujur, ramah dan selalu tepat waktu</p>
               </div>
@@ -100,10 +100,10 @@ function LandingPage() {
                     <div className="carousel-item active bg-aliceblue">
                         <div className="row mx-4 my-5">
                             <div className="col-lg-2 m-auto">
-                                <img src="./image/photo1-testimoni.png" className="d-block testimonial-img m-auto" alt="Person"/>
+                                <img src="./images/photo1-testimoni.png" className="d-block testimonial-img m-auto" alt="Person"/>
                             </div>
                             <div className="col-lg-10">
-                                <img src="./image/Rate.png" className="testimonial-rating" alt="Rating"/>
+                                <img src="./images/Rate.png" className="testimonial-rating" alt="Rating"/>
                                 <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod”</p>
                                 <p className="testimonial-name">John Dee 32, Bromo</p>
                             </div>
@@ -112,10 +112,10 @@ function LandingPage() {
                     <div className="carousel-item bg-aliceblue">
                         <div className="row mx-4 my-5">
                             <div className="col-lg-2 m-auto">
-                                <img src="./image/photo2-testimoni.png" className="d-block testimonial-img m-auto" alt="Person"/>
+                                <img src="./images/photo2-testimoni.png" className="d-block testimonial-img m-auto" alt="Person"/>
                             </div>
                             <div className="col-lg-10">
-                                <img src="./image/Rate.png" className="testimonial-rating" alt="Rating"/>
+                                <img src="./images/Rate.png" className="testimonial-rating" alt="Rating"/>
                                 <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod””</p>
                                 <p className="testimonial-name">John Dee 32, Bromo</p>
                             </div>
@@ -124,10 +124,10 @@ function LandingPage() {
                     <div className="carousel-item bg-aliceblue">
                         <div className="row mx-4 my-5">
                             <div className="col-lg-2 m-auto">
-                                <img src="./image/photo1-testimoni.png" className="d-block testimonial-img m-auto" alt="Person"/>
+                                <img src="./images/photo1-testimoni.png" className="d-block testimonial-img m-auto" alt="Person"/>
                             </div>
                             <div className="col-lg-10">
-                                <img src="./image/Rate.png" className="testimonial-rating" alt="Rating"/>
+                                <img src="./images/Rate.png" className="testimonial-rating" alt="Rating"/>
                                 <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod””</p>
                                 <p className="testimonial-name">John Dee 32, Bromo</p>
                             </div>
@@ -239,15 +239,15 @@ function LandingPage() {
           </div>
           <div className="col-lg-4 col-md-6 col-sm-12">
             <p>Connect with us</p>
-            <img src="./image/icon_facebook.png" alt=""/>
-            <img src="./image/icon_instagram.png" alt=""/>
-            <img src="./image/icon_twitter.png" alt=""/>
-            <img src="./image/icon_mail.png" alt=""/>
-            <img src="./image/icon_twitch.png" alt=""/>
+            <img src="./images/icon_facebook.png" alt=""/>
+            <img src="./images/icon_instagram.png" alt=""/>
+            <img src="./images/icon_twitter.png" alt=""/>
+            <img src="./images/icon_mail.png" alt=""/>
+            <img src="./images/icon_twitch.png" alt=""/>
           </div>
           <div className="col-lg-3 col-md-6 col-sm-12">
             <p>Copyright Binar 2022</p>
-            <img src="./image/logo.png" alt=""/>
+            <img src="./images/logo.png" alt=""/>
           </div>
         </div>
       </footer>

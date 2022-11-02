@@ -62,7 +62,7 @@ const Nav = () => {
                             <Link to='/file' className="nav-link">File Processing</Link>
                         </li>
                         <li className="nav-item me-2">
-                            <a className="nav-link" href="#FAQ">FAQ</a>
+                            <Link to='/list-cars' className="nav-link">List Cars</Link>
                         </li>
                         <li className="nav-item">
                             <button 

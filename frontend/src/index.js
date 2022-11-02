@@ -1,45 +1,65 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { LandingPage, About, Login, Protected, FileProcessing } from './components';
+  LandingPage,
+  About,
+  Login,
+  Protected,
+  FileProcessing,
+  ListCars
+} from "./components";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import { createStore, compose, applyMiddleware } from "redux";
+import { Provider } from "react-redux";
+import thunk from "redux-thunk";
+import reducers from "./reducers";
+
+const store = createStore(reducers, compose(applyMiddleware(thunk)));
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <Protected>
-            <LandingPage/>
-          </Protected>
-        }
-      />
-      <Route
-        path="/about"
-        element={
-          <Protected>
-            <About/>
-          </Protected>
-        }
-      />
-      <Route
-        path="/file"
-        element={
-          <Protected>
-            <FileProcessing/>
-          </Protected>
-        }
-      />
-      <Route path='/Login' element={<Login/>} />
-    </Routes>
+    <Provider store={store}>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Protected>
+              <LandingPage />
+            </Protected>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <Protected>
+              <About />
+            </Protected>
+          }
+        />
+        <Route
+          path="/file"
+          element={
+            <Protected>
+              <FileProcessing />
+            </Protected>
+          }
+        />
+        <Route
+          path="/list-cars"
+          element={
+            <Protected>
+              <ListCars />
+            </Protected>
+          }
+        />
+        <Route path="/Login" element={<Login />} />
+      </Routes>
+    </Provider>
   </BrowserRouter>
 );
 

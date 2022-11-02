@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import logo from "../../logo.svg";
 import "../../App.css";
+import Nav from "../navbar";
 
 function FileProcessing() {
   const [imageFile, setImageFile] = useState(logo);
@@ -19,6 +20,7 @@ function FileProcessing() {
 
   return (
     <div className="App">
+      <Nav/>
       <header className="App-header">
         <img src={imageFile} className="App-logo" alt="logo" />
         <input
