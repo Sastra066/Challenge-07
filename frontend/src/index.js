@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import {
   LandingPage,
@@ -10,7 +9,9 @@ import {
   Login,
   Protected,
   FileProcessing,
-  ListCars
+  ListCars,
+  Register,
+  SearchCar,
 } from "./components";
 
 import { createStore, compose, applyMiddleware } from "redux";
@@ -25,30 +26,7 @@ root.render(
   <BrowserRouter>
     <Provider store={store}>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <Protected>
-              <LandingPage />
-            </Protected>
-          }
-        />
-        <Route
-          path="/about"
-          element={
-            <Protected>
-              <About />
-            </Protected>
-          }
-        />
-        <Route
-          path="/file"
-          element={
-            <Protected>
-              <FileProcessing />
-            </Protected>
-          }
-        />
+        <Route path="/" element={<LandingPage />} />
         <Route
           path="/list-cars"
           element={
@@ -57,7 +35,16 @@ root.render(
             </Protected>
           }
         />
+        <Route
+          path="/Cars"
+          element={
+            <Protected>
+              <SearchCar />
+            </Protected>
+          }
+        />
         <Route path="/Login" element={<Login />} />
+        <Route path="/Register" element={<Register />} />
       </Routes>
     </Provider>
   </BrowserRouter>

@@ -1,8 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { GoogleLogin } from "react-google-login";
-import "../../Login.css";
+import TextField from "@mui/material/TextField";
+import LoginStyle from "./login.module.css";
 
 async function doLogin({ email, password }) {
   // Gunakan endpoint-mu sendiri
@@ -17,10 +18,7 @@ async function doLogin({ email, password }) {
     }),
   });
   const data = await response.json();
-  const user = data.data;
-  console.log(data);
-  document.getElementById("pass").innerHTML = data.message;
-  return user.token;
+  return data;
 }
 
 async function doLoginWithGoogle(token) {
@@ -42,6 +40,7 @@ async function doLoginWithGoogle(token) {
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const token = localStorage.getItem("token");
@@ -54,9 +53,17 @@ function Login() {
     setIsLoading(true);
     e.preventDefault();
     doLogin({ email, password })
-      .then((token) => localStorage.setItem("token", token))
+      .then((user) => {
+        if (!user.data) {
+          setError(user.message);
+        } else {
+          localStorage.setItem("token", user.data.token);
+        }
+      })
       .catch((err) => console.log(err.message))
-      .finally(() => setIsLoading(false));
+      .finally(() => {
+        setIsLoading(false);
+      });
   }
 
   const haldleSuccessGoogle = (response) => {
@@ -79,44 +86,45 @@ function Login() {
   };
 
   return (
-    <div>
-      <div className="logo text-center">
-        <h1>Logo</h1>
-      </div>
-      <div className="wrapper">
+    <div className={LoginStyle.container}>
+      <div className={LoginStyle.wrapper}>
         <div className="inner-warpper text-center">
-          <h2 className="title">Login to your account</h2>
+          <h2 className={LoginStyle.title}>Login to your account</h2>
           {!isLoggedIn ? (
             <form onSubmit={handleSubmit}>
-              <div className="input-group">
-                {/* <label className="palceholder" for="userName">User Name</label> */}
-                <input
-                  className="form-control"
+              <div>
+                <TextField
                   name="userName"
+                  className={LoginStyle.input}
                   id="userName"
-                  type="text"
-                  placeholder="User Name"
+                  label="Email"
+                  type="email"
+                  required
                   onChange={(e) => setEmail(e.target.value)}
                   value={email}
                 />
-                <span className="lighting" id="email"></span>
               </div>
-              <div className="input-group">
-                {/* <label className="palceholder" for="userPassword">Password</label> */}
-                <input
-                  className="form-control"
+              <div>
+                <TextField
                   name="userPassword"
+                  className={LoginStyle.input}
                   id="userPassword"
+                  label="Password"
                   type="password"
-                  placeholder="Password"
+                  required
                   onChange={(e) => setPassword(e.target.value)}
                   value={password}
                 />
-                <span className="lighting" id="pass"></span>
+                <br />
+                <span className={LoginStyle.errorMessage}>{error}</span>
               </div>
 
-              <input type="submit" value={isLoading ? "Loading" : "Login"} />
-
+              <input
+                type="submit"
+                className="button-28"
+                value={isLoading ? "Loading" : "Login"}
+              />
+              <p className={LoginStyle.p}>OR</p>
               <GoogleLogin
                 clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
                 buttonText="Login With Google"
@@ -124,26 +132,19 @@ function Login() {
                 onFailure={haldleFailureGoogle}
                 cookiePolicy={"single_host_origin"}
               />
-
-              <div className="clearfix supporter">
-                <div className="pull-left remember-me">
-                  <input id="rememberMe" type="checkbox" />
-                  <label for="rememberMe">Remember Me</label>
-                </div>
-                <a className="forgot pull-right" href="#">
-                  Forgot Password?
+              <div className="signup-wrapper text-center">
+                <Link to="/Register">
+                <a href="#register">
+                  Don't have an accout?
+                  <span className="text-primary"> Create One</span>
                 </a>
+                </Link>
+                
               </div>
             </form>
           ) : (
             <Navigate to="/" />
           )}
-        </div>
-        <div className="signup-wrapper text-center">
-          <a href="#">
-            Don't have an accout?{" "}
-            <span className="text-primary">Create One</span>
-          </a>
         </div>
       </div>
     </div>

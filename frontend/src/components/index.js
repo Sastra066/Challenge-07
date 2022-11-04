@@ -1,8 +1,8 @@
 import LandingPage from './LandingPage';
-import About from './About';
 import Login from './Login';
 import Protected from './Protected';
-import FileProcessing from './FileProcessing';
 import ListCars from './ListCars';
+import Register from './Register';
+import SearchCar from './SearchCarPage';
 
-export {LandingPage, About, Login, Protected, FileProcessing, ListCars }
+export {LandingPage, Login, Protected, ListCars, Register, SearchCar }
