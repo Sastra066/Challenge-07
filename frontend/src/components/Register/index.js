@@ -1,6 +1,6 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import { Link, Navigate } from "react-router-dom";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import LoginStyle from "../Login/login.module.css";
 import TextField from "@mui/material/TextField";
 
@@ -23,7 +23,6 @@ async function doRegister({ email, password }) {
 function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
   const [issetRegisterd, setRegisterd] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -70,7 +69,6 @@ function Register() {
                   value={password}
                 />
                 <br />
-                <span className={LoginStyle.errorMessage}>{error}</span>
               </div>
 
               <input
