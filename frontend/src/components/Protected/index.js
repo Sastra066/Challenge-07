@@ -1,3 +1,4 @@
+import React from "react";
 import { Navigate } from "react-router-dom";
 
 // TODO: Leave it to your imagination

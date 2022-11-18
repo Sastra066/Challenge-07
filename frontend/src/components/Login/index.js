@@ -135,7 +135,7 @@ function Login() {
               <div className="signup-wrapper text-center">
                 <Link to="/Register">
                 <a href="#register">
-                  Don't have an accout?
+                  Don&apos;t have an accout?
                   <span className="text-primary"> Create One</span>
                 </a>
                 </Link>

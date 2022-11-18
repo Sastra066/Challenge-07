@@ -3,7 +3,6 @@ import Footer from "../Footer";
 import ListCars from "../ListCars";
 import MainSection from "../MainSection";
 import Nav from "../navbar";
-import Search from "../Search";
 
 function SearchCar() {
   return (

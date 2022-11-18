@@ -5,10 +5,8 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import {
   LandingPage,
-  About,
   Login,
   Protected,
-  FileProcessing,
   ListCars,
   Register,
   SearchCar,

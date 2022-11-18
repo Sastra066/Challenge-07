@@ -2,13 +2,13 @@
  * @file contains authentication request handler and its business logic
  * @author Fikri Rahmat Nurhidayat
  */
-const axios = require("axios");
+
 const { OAuth2Client } = require("google-auth-library");
 const client = new OAuth2Client(process.env.REACT_APP_GOOGLE_CLIENT_ID);
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const UserServices = require("../../../services/userServices");
 const { JWT_SECRET_KEY = "Rahasia" } = process.env;
+const UserServices = require("../../../services/userServices");
 const SALT = 10;
 
 //FUNCTION UNTUK ME ENCRYPT PASSWORD SAAT REGISTRASI
@@ -44,7 +44,7 @@ function createToken(payload) {
   return jwt.sign(payload, process.env.JWT_SIGNATURE_KEY || "Rahasia");
 }
 
-function createToken(user) {
+function createToken2(user) {
   const payload = {
     id: user.id,
     name: user.name,
@@ -209,7 +209,6 @@ module.exports = {
       });
     }
   },
-
   async handleGoogleLoginOrRegister(req, res) {
     const { token } = req.body;
 
@@ -226,7 +225,7 @@ module.exports = {
       let user = await UserServices.findOne({ where: { email: email } });
       if (!user) user = await UserServices.create({ email, name });
 
-      const accessToken = createToken(user);
+      const accessToken = createToken2(user);
 
       res.status(201).json({ accessToken });
     } catch (err) {
